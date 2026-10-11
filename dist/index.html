@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f4f1ea" />
+    <title>Prompt Meter | AI token counter</title>
+    <script type="module" crossorigin src="/assets/index-Q9odUvFG.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-BTC1uYcq.css">
+  </head>
+  <body>
+    <main class="app-shell">
+      <nav class="topbar">
+        <a class="brand" href="/" aria-label="Prompt Meter home">
+          <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+          <span>prompt<span class="brand-accent">meter</span></span>
+        </a>
+        <div class="nav-meta"><span class="status-dot"></span> Runs locally in your browser</div>
+      </nav>
+
+      <section class="intro">
+        <p class="eyebrow">PROMPT ANALYTICS <span></span> 01</p>
+        <h1>Know your prompt<br /><em>before you send it.</em></h1>
+        <p class="lede">Estimate tokens, cost, and context usage across the models you actually use.</p>
+      </section>
+
+      <section class="workspace" aria-label="Prompt tokenizer">
+        <div class="editor-panel panel">
+          <div class="panel-heading">
+            <div><span class="section-number">01</span><h2>Prompt input</h2></div>
+            <button class="text-button" id="clear-button" type="button">Clear <span aria-hidden="true">&#8599;</span></button>
+          </div>
+          <textarea id="prompt-input" spellcheck="false" aria-label="Prompt input" placeholder="Paste your prompt here...">You are a thoughtful assistant. Explain the concept of attention in transformer models to a curious engineer. Use a clear analogy, then show the core equation.</textarea>
+          <div class="editor-footer">
+            <span id="char-count">0 characters</span>
+            <span class="shortcut">⌘ ↵ to analyze</span>
+          </div>
+        </div>
+
+        <aside class="results-panel">
+          <div class="model-row">
+            <label for="model-select">MODEL</label>
+            <select id="model-select">
+              <option value="gpt-4o">GPT-4o</option>
+              <option value="claude-3-5-sonnet">Claude 3.5 Sonnet</option>
+              <option value="gemini-1-5-pro">Gemini 1.5 Pro</option>
+              <option value="llama-3-1">Llama 3.1</option>
+            </select>
+          </div>
+          <div class="token-readout">
+            <span class="readout-label">ESTIMATED TOKENS</span>
+            <strong id="token-count">0</strong>
+            <span class="readout-note" id="accuracy-note">Approximation based on text structure</span>
+          </div>
+          <div class="stats-grid">
+            <div class="stat"><span>CHARACTERS</span><strong id="stat-characters">0</strong></div>
+            <div class="stat"><span>WORDS</span><strong id="stat-words">0</strong></div>
+            <div class="stat"><span>CONTEXT USED</span><strong id="context-used">0.0%</strong></div>
+            <div class="stat"><span>EST. INPUT COST</span><strong id="input-cost">$0.0000</strong></div>
+          </div>
+          <div class="context-track" aria-label="Context window usage"><span id="context-bar"></span></div>
+          <button class="analyze-button" id="analyze-button" type="button">Analyze prompt <span aria-hidden="true">&#8594;</span></button>
+        </aside>
+      </section>
+
+      <section class="detail-strip">
+        <div class="detail-item"><span class="detail-icon">&#9672;</span><div><strong>Local by default</strong><p>Your prompt never leaves this tab.</p></div></div>
+        <div class="detail-item"><span class="detail-icon">&#10003;</span><div><strong>Fast estimates</strong><p>Useful before every API call.</p></div></div>
+        <div class="detail-item"><span class="detail-icon">&#9733;</span><div><strong>Model aware</strong><p>Compare four popular families.</p></div></div>
+      </section>
+
+      <footer><span>Prompt Meter / 2026</span><span>Token counts are estimates. Use the model's tokenizer for billing precision.</span></footer>
+    </main>
+  </body>
+</html>
